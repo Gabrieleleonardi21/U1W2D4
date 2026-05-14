@@ -83,7 +83,7 @@ function epify(testo) {
 }
 
 console.log(epify("è figo!"));
-console.log(epify("EPICODE è figo!"));
+console.log(epify("è incredibile"));
 console.log(epify("School"));
 console.log(epify("EPICODE School"));
 
