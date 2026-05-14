@@ -181,3 +181,18 @@ console.log(dammiCasuali(5));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function etaInGiorni(annoNascita, meseNascita, giornoNascita) {
+  const oggi = new Date();
+  const nascita = new Date(annoNascita, meseNascita - 1, giornoNascita);
+
+  const differenzaMillisecondi = oggi - nascita;
+
+  const giorni = Math.floor(differenzaMillisecondi / (1000 * 60 * 60 * 24));
+
+  console.log("Hai " + giorni + " giorni!");
+  return giorni;
+}
+
+etaInGiorni(1998, 10, 21);
+etaInGiorni(2000, 1, 1);
+etaInGiorni(1985, 12, 25);
