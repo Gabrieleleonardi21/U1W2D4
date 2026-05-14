@@ -177,18 +177,37 @@ console.log(dammiCasuali(5));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-function etaInGiorni(annoNascita, meseNascita, giornoNascita) {
-  const oggi = new Date();
-  const nascita = new Date(annoNascita, meseNascita - 1, giornoNascita);
+const etaInGiorni = function (annoNascita, meseNascita, giornoNascita) {
+  const today = new Date();
+  const birthday = new Date(annoNascita, meseNascita - 1, giornoNascita);
+  const millisecondi = today - birthday;
+  const giorni = Math.floor(millisecondi / (1000 * 60 * 60 * 24));
+  console.log(`hai ${giorni} giorni `);
+};
 
-  const differenzaMillisecondi = oggi - nascita;
+etaInGiorni(1998, 11, 21);
+etaInGiorni(2026, 5, 13);
 
-  const giorni = Math.floor(differenzaMillisecondi / (1000 * 60 * 60 * 24));
+const gatti = function (a, b) {
+  const file = Math.ceil(a / b);
+  const gattiMancanti = a % b;
+  return `le file sono ${file} i gatti sono ${gattiMancanti} `;
+};
+console.log(gatti(44, 6));
 
-  console.log("Hai " + giorni + " giorni!");
-  return giorni;
+const calcoloTempoDaSecondi = function (secondi) {
+  const ore = Math.floor(secondi / (60 * 60));
+  const minuti = Math.floor((secondi % 3600) / 60);
+  const sec = secondi % 60;
+  console.log(`${ore} ore, ${minuti} minuti e , ${sec} secondi`);
+};
+
+calcoloTempoDaSecondi(12560);
+
+const casuale = function (n) {
+  return Math.floor(Math.random() * n + 1);
+};
+
+for (let i = 0; i < 100; i++) {
+  console.log(casuale(15));
 }
-
-etaInGiorni(1998, 10, 21);
-etaInGiorni(2000, 1, 1);
-etaInGiorni(1985, 12, 25);
