@@ -58,6 +58,15 @@ console.log("Input 25:", distanzaDa19(25));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function dentroIntervallo(n) {
+  return (n >= 20 && n <= 100) || n === 400;
+}
+console.log(dentroIntervallo(20)); // true (limite inferiore)
+console.log(dentroIntervallo(50)); // true (nel range)
+console.log(dentroIntervallo(100)); // true (limite superiore)
+console.log(dentroIntervallo(400)); // true (valore specifico)
+console.log(dentroIntervallo(15)); // false
+console.log(dentroIntervallo(150)); // false
 
 /* ESERCIZIO 5 — epify
    Funzione epify(testo): aggiunge "EPICODE " davanti.
@@ -66,12 +75,27 @@ console.log("Input 25:", distanzaDa19(25));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function epify(testo) {
+  if (testo.startsWith("EPICODE")) {
+    return testo;
+  }
+  return "EPICODE " + testo;
+}
+
+console.log(epify("è figo!"));
+console.log(epify("EPICODE è figo!"));
+console.log(epify("School"));
+console.log(epify("EPICODE School"));
 
 /* ESERCIZIO 6 — divisibilePer3o7
    Funzione divisibilePer3o7(n): true se n positivo E divisibile per 3 O per 7.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function divisibilePer3o7(n) {
+  return n > 0 && (n % 3 === 0 || n % 7 === 0);
+}
+console.log(divisibilePer3o7(12));
 
 /* ESERCIZIO 7 — invertiStringa
    Funzione invertiStringa(testo): ritorna la stringa invertita.
@@ -80,6 +104,22 @@ console.log("Input 25:", distanzaDa19(25));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function invertiStringa(testo) {
+  // 1. Converte la stringa in un array di caratteri
+  let caratteri = testo.split("");
+  let risultato = "";
+
+  // 2. Ciclo for al contrario: parte dall'ultimo indice fino a 0
+  for (let i = caratteri.length - 1; i >= 0; i--) {
+    risultato += caratteri[i];
+  }
+
+  // 3. Ritorna la nuova stringa invertita
+  return risultato;
+}
+
+console.log(invertiStringa("Ciao Mondo")); // Output: "odnoM oaiC"
+console.log(invertiStringa("JavaScript")); // Output: "tpircSavaJ"
 
 /* ESERCIZIO 8 — inizialiMaiuscole
    Funzione inizialiMaiuscole(frase): metti in maiuscolo la prima lettera di ogni parola.
@@ -88,6 +128,20 @@ console.log("Input 25:", distanzaDa19(25));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function inizialiMaiuscole(frase) {
+  let parole = frase.split(" ");
+
+  for (let i = 0; i < parole.length; i++) {
+    let parola = parole[i];
+
+    if (parola.length > 0) {
+      parole[i] = parola.slice(0, 1).toUpperCase() + parola.slice(1);
+    }
+  }
+
+  return parole.join(" ");
+}
+console.log(inizialiMaiuscole("ciao mondo")); // Output: "Ciao Mondo"
 
 /* ESERCIZIO 9 — togliPrimoEUltimo
    Funzione togliPrimoEUltimo(testo): rimuovi primo e ultimo carattere.
@@ -95,6 +149,10 @@ console.log("Input 25:", distanzaDa19(25));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function togliPrimoEUltimo(testo) {
+  return testo.slice(1, -1);
+}
+console.log(togliPrimoEUltimo("EPICODE"));
 
 /* ESERCIZIO 10 — dammiCasuali
    Funzione dammiCasuali(n): ritorna un array di n numeri interi casuali tra 0 e 10 (inclusi).
@@ -102,6 +160,15 @@ console.log("Input 25:", distanzaDa19(25));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function dammiCasuali(n) {
+  let arrayRisultato = [];
+  for (let i = 0; i < n; i++) {
+    let numeroCasuale = Math.floor(Math.random() * 11);
+    arrayRisultato.push(numeroCasuale);
+  }
+  return arrayRisultato;
+}
+console.log(dammiCasuali(5));
 
 /* --EXTRA-- ESERCIZIO 11 — etaInGiorni
    Funzione etaInGiorni(annoNascita, meseNascita, giornoNascita).
