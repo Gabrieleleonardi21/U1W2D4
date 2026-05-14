@@ -11,12 +11,10 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-function sum() {
-  let l1 = 3;
-  let l2 = 4;
+function sum(l1, l2) {
   return l1 * l2;
 }
-console.log(sum());
+console.log(sum(3, 5));
 
 /* ESERCIZIO 2 — sommaPazza
    Funzione sommaPazza(a, b): ritorna a + b.
@@ -61,12 +59,12 @@ console.log("Input 25:", distanzaDa19(25));
 function dentroIntervallo(n) {
   return (n >= 20 && n <= 100) || n === 400;
 }
-console.log(dentroIntervallo(20)); // true (limite inferiore)
-console.log(dentroIntervallo(50)); // true (nel range)
-console.log(dentroIntervallo(100)); // true (limite superiore)
-console.log(dentroIntervallo(400)); // true (valore specifico)
-console.log(dentroIntervallo(15)); // false
-console.log(dentroIntervallo(150)); // false
+console.log(dentroIntervallo(20));
+console.log(dentroIntervallo(50));
+console.log(dentroIntervallo(100));
+console.log(dentroIntervallo(400));
+console.log(dentroIntervallo(15));
+console.log(dentroIntervallo(150));
 
 /* ESERCIZIO 5 — epify
    Funzione epify(testo): aggiunge "EPICODE " davanti.
@@ -95,7 +93,7 @@ console.log(epify("EPICODE School"));
 function divisibilePer3o7(n) {
   return n > 0 && (n % 3 === 0 || n % 7 === 0);
 }
-console.log(divisibilePer3o7(12));
+console.log(divisibilePer3o7(49));
 
 /* ESERCIZIO 7 — invertiStringa
    Funzione invertiStringa(testo): ritorna la stringa invertita.
@@ -107,15 +105,13 @@ console.log(divisibilePer3o7(12));
 function invertiStringa(testo) {
   // 1. Converte la stringa in un array di caratteri
   let caratteri = testo.split("");
-  let risultato = "";
+  let risultato = [];
 
   // 2. Ciclo for al contrario: parte dall'ultimo indice fino a 0
   for (let i = caratteri.length - 1; i >= 0; i--) {
-    risultato += caratteri[i];
+    risultato.push(caratteri[i]);
   }
-
-  // 3. Ritorna la nuova stringa invertita
-  return risultato;
+  return risultato.join(``);
 }
 
 console.log(invertiStringa("Ciao Mondo")); // Output: "odnoM oaiC"
@@ -141,7 +137,7 @@ function inizialiMaiuscole(frase) {
 
   return parole.join(" ");
 }
-console.log(inizialiMaiuscole("ciao mondo")); // Output: "Ciao Mondo"
+console.log(inizialiMaiuscole("ciao mondo"));
 
 /* ESERCIZIO 9 — togliPrimoEUltimo
    Funzione togliPrimoEUltimo(testo): rimuovi primo e ultimo carattere.
@@ -152,7 +148,7 @@ console.log(inizialiMaiuscole("ciao mondo")); // Output: "Ciao Mondo"
 function togliPrimoEUltimo(testo) {
   return testo.slice(1, -1);
 }
-console.log(togliPrimoEUltimo("EPICODE"));
+console.log(togliPrimoEUltimo("EPICODE 2026"));
 
 /* ESERCIZIO 10 — dammiCasuali
    Funzione dammiCasuali(n): ritorna un array di n numeri interi casuali tra 0 e 10 (inclusi).
